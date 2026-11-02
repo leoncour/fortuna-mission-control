@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "status": "RESEARCH_ONLY_NOT_LIVE",
+  "rules_id": "SPX_XSP_0DTE_V3_5",
+  "master_path": "spx 0dte strategy/SPX_XSP_0DTE_MASTER_STRATEGY_V3_0_TO_V3_5.md",
+  "scope": [
+    "SPXW",
+    "XSP"
+  ],
+  "gross_expiration_profit_floor_usd": 500,
+  "gross_global_expiration_loss_cap_usd": 300,
+  "costs": "excluded_from_research_gross_targets_disclose_separately_for_execution",
+  "strategy_families": {
+    "BULL": "defined_risk_bull_put_credit_candidates",
+    "BEAR": "defined_risk_bear_call_credit_candidates",
+    "UNCLEAR": "neutral_mixed_width_condor_candidates",
+    "DATA_INCOMPLETE": "bounded_recovery_then_reject"
+  },
+  "gates": [
+    "fresh_broker_quotes",
+    "complete_payoff_all_strike_breakpoints_and_tails",
+    "profit_floor",
+    "global_loss_cap",
+    "liquidity_margin_and_legging_review",
+    "human_approval_before_live_order"
+  ],
+  "market_data_policy": "No quote or strategy execution authority is conveyed by this file; always refresh quotes at actual entry",
+  "research_policy": "read_master_only_for_novel_strategy_conflict_or_explicit_research;do_not_block_market_checkpoint",
+  "scheduler_policy": "preserve_existing_schedules;github_failure_does_not_disable_capture",
+  "approval": "design_only"
+}
